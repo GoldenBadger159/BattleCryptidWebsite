@@ -1,0 +1,135 @@
+
+
+:root {
+    --copper: 'Copperplate Gothic Light', sans-serif;
+    --century: 'Century Schoolbook', sans-serif;
+    --eerie-black: #242423;
+    --antiflash-white: #ebebebff;
+    --silver: #c0c0c0ff;
+    --bice-blue: #3a6ea5ff;
+    --polynesian-blue: #004e98ff;
+}
+
+header {
+    background-color: var(--bice-blue);
+    border-style: ridge;
+    border-color: var(--eerie-black);
+    font-family: var(--century);
+}
+
+.bctitle {
+    float: left;
+    font-size: 75px;
+    text-align: left;
+    font-family: var(--copper);
+    margin: 0px;
+}
+
+.top-utility {
+    float: right;
+    margin-right: 25px;
+}
+
+#login {
+    font-size: 17px;
+    color: var(--antiflash-white);
+    text-align: center;
+    padding-right: 15px;
+    font-family: var(--century);
+}
+
+#search-bar {
+    width: 200px;
+}
+
+#search {
+    font-family: var(--century);
+    font-size: 15px;
+    padding: 0px;
+}
+
+.logo {
+    width: 40px;
+    height: 40px;
+    padding-left: 10px;
+    margin-bottom: -10px;
+}
+
+.nav {
+    overflow: auto;
+    width: 80%;
+    margin:auto;
+    background-color: var(--bice-blue);
+}
+
+.nav a {
+    float: left;
+    width: 15%;
+    margin-left: 1%;
+    margin-right: 1%;
+    margin-bottom: 10px;
+    margin-top: 10px;
+    padding: 14px 16px;
+    font-size: 17px;
+    text-decoration: none;
+    text-align: center;
+    font-family: var(--copper);
+    color: var(--antiflash-white);
+    background-color: var(--polynesian-blue);
+    border-style: ridge;
+    border-color: var(--antiflash-white);
+}
+
+.nav a:hover {
+    color: black;
+    background-color: var(--silver);
+    border-color: var(--eerie-black)
+}
+
+.active {
+    background-color: var(--eerie-black);
+    color: var(--antiflash-white);
+}
+
+body {
+    text-align: center;
+    font-family: var(--century);
+    font-size: 17px;
+}
+
+.about {
+    background-color: var(--polynesian-blue);
+    height: 200px;
+    width: 90%;
+    margin: auto;
+}
+
+.filler {
+    display: inline-block;
+    background-color: var(--polynesian-blue);
+    overflow: auto;
+    width: 25%;
+    height: 400px;
+    margin: 15px;
+    
+}
+
+.filler h1 {
+    font-size: 50px;
+    margin-top: 20px;
+}
+
+.filler p {
+    margin-top: -25px;
+}
+
+.news {
+    background-color: var(--polynesian-blue);
+    width: 90%;
+    height: 200px;
+    margin: auto;
+}
+
+.news p {
+    column-count: 2;
+}
