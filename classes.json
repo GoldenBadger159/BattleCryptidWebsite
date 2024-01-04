@@ -1,6 +1,5 @@
 [
     {"abjurer": [
-        {"description:": "\"Your allies are your strength; you must do everything you can to keep them alive. Hopefully, they will see this and keep you alive as well.\" – Words of Elder Bombasa to his apprentice. The Abjurer uses his faith and prayer to grant him strength in battle. His main focus is to make sure everyone in the party stays healthy and healed.  However, when it comes to destroying the undead no one rivals the Abjurers might."},
         {"hitDice": 6},
         {"defMod": 2},
         {"agilMod": 2},
@@ -8,7 +7,6 @@
         {"speedMod": 3},
         {"talentPoints": 3},
         {"classTalents": ["animals", "knowledge mundane", "knowledge mythical", "persuasion", "surgical"]},
-        {"createDesc": "Abjurers are as closely tied to their deity as an Oni to his hatred, and thus their personality is greatly affected by the teachings of their patron. To create a quick Abjurer, choose Armid, the god of healing, as your deity and take the Buff and Heal Schools at level 1. Most Abjurers with these traits would have a formal education within one of the many temples/hospitals dedicated to Armid. To further speed the process, place your highest Defining Scores as Constitution and Intelligence."},
         {"levels": [
             {"1": [
                 {"isAchieved": false},
@@ -33,6 +31,7 @@
                     {"sword egis": [{"type": "defenseSpell"},
                         {"actions": "meditation"},
                         {"charges": "x"},
+                        {"range": "sight"},
                         {"description": "You may as a full action enter a mediation. Each turn you remain in this meditation costs 1 spell charge. while in this mediation you may focus on another player. So long as they remain in sight of you, all sword attacks aimed at them have a 50% chance of having their damage reduced by 1d4. While in this mediation you may not take any given action, move actions, normal actions, or full actions otherwise your mediation is broken. Your meditation is also broken if you are hit. You are also considered helpless while meditating."}
                     ]},
                     {"charge heal 1": [{"type": "healSpell"},
@@ -87,7 +86,7 @@
                         {"description": "+2 to knowledge mundane or mythical knowledge checks for identifying the practices of religions or cults and identifying deities."}
                     ]}
                 ]},
-                {"proficiencies": {"staff": false}}
+                {"proficiencies": {"staff": true}}
             ]},
             {"3": [
                 {"isAchieved": false},
@@ -108,9 +107,6 @@
                         {"description": "The player may spend 1 day reversing the effects of a grimoire ritual."}
                     ]},
                     {"ranged healer 1": [{"type": "spellMod"},
-                        {"actions": "none"},
-                        {"charges": 2},
-                        {"range": "self"},
                         {"description": "The player may use 2 spell charges to increase the range of “Charge Heal” abilities up to 60 ft."}
                     ]}
                 ]}                
@@ -118,102 +114,266 @@
             {"4": [
                 {"isAchieved": false},
                 {"toHit": [2, 1]},
-                {"skills": []}
+                {"skills": [
+                    {"holy symbol": [{"type": "healSpell"},
+                        {"actions": "move"},
+                        {"charges": 0},
+                        {"range": "self"},
+                        {"healAmount": "none"},
+                        {"description": "As a move action you may grab your holy symbol and remove a curse, hex, or poison from yourself. (You must be unrestrained in order to perform this action)."}
+                    ]},
+                    {"sanctuary 2": [{"type": "buffSpell"},
+                        {"actions": "full"},
+                        {"charges": "2"},
+                        {"range": 60},
+                        {"description": "As a full action you may use 2 spell charges to fill a square with a maximum size of 15ft x 15ft with a spell that raises the Defense Score of anyone inside it by 2. This bonus goes away immediately when they leave the square. You may place as many of these on the battlefield as you want but only 1 may be placed before combat. A portion of this square must be within 60 ft. of you when you place it. The duration of the protective spell is 10 minutes or until you declare that you want to end the spell."}
+                    ]},
+                    {"light": [{"type": "alteration"},
+                        {"description": "As a full action and at touch you may make a small object glow. It lights a 30ft area around the thing that you just touched. You may only have 1 instance of this spell at any given time."}
+                    ]},
+                    {"health egis 1": [{"type": "defenseSpell"},
+                        {"actions": "meditation"},
+                        {"charges": "x"},
+                        {"range": "sight"},
+                        {"description": "You may as a full action enter a mediation. Each turn you remain in this meditation costs 1 spell charge. While in this mediation you may focus on 1 player within sight of you. Every turn this player has a 50% chance to heal 1d4. While in this mediation you may not take any given action, move actions, normal actions or full actions otherwise your mediation is broken. If you are hit, your meditation is also broken. You are also considered helpless while meditating."}
+                    ]}
+                ]}
             ]},
             {"5": [
                 {"isAchieved": false},
-                {"toHit": [0, 0]},
-                {"skills": []}
+                {"toHit": [2, 2]},
+                {"skills": [
+                    {"helper": [{"type": "talentBonus"},
+                        {"talents": ["surgical"]},
+                        {"bonus": 2},
+                        {"description": "The player gains a +2 bonus to surgical checks."}
+                    ]},
+                    {"holy blast 1": [{"type": "atkSpell"},
+                        {"actions": "normal"},
+                        {"charges": 2},
+                        {"range": 80},
+                        {"diceCount": 1},
+                        {"dice": 10},
+                        {"description": "As a normal action the player may use 2 spell charges to let out a blast of energy that fills a straight line in front of him/her for 80ft. This deals 1d10 damage to everyone in the line and 1d12 if they are weak to holiness."}
+                    ]},
+                    {"salt circle 2": [{"type": "buffSpell"},
+                        {"actions": "full"},
+                        {"charges": "2"},
+                        {"range": 40},
+                        {"description": "As a full action the player may use 2 spell charges to create a 15ft x 15ft circle of salt within 40 ft. of him/herself. Everyone who remains inside the circle gets a +2 bonus to their Body and mind score. This bonus disappears immediately if they leave the circle. You may place as many of these on the battlefield as you want but only 1 may be placed before combat."}
+                    ]},
+                    {"rewriting fate": [{"type": "spellMod"},
+                        {"description": "You may reroll healing spells and buffs by taking 1d8 damage to yourself. (This may only be used when attempting to heal or buff others and not yourself.)"}
+                    ]},
+                    {"charge heal 2": [{"type": "healSpell"},
+                        {"actions": "normal"},
+                        {"charges": "x"},
+                        {"range": "touch"},
+                        {"healAmount": "2x"},
+                        {"description": "As a normal action you may touch an ally and use spell charges to heal them. You may use as many spell charges as you have, and each spell charge you use heals the ally by 2 HP. The spell charges are depleted after using them this way."}
+                    ]}
+                ]}
             ]},
             {"6": [
                 {"isAchieved": false},
-                {"toHit": [0, 0]},
-                {"skills": []}
+                {"toHit": [2, 2]},
+                {"skills": [
+                    {"power strike": [{"type": "atkMod"},
+                        {"actions": "none"},
+                        {"charges": 0},
+                        {"addDmg": 3},
+                        {"description": "Player may choose to take a -3 penalty to hit and gain a +3 to damage on melee attacks. The player must declare they are doing this before rolling “To Hit”."}
+                    ]},
+                    {"sanctuary 3": [{"type": "buffSpell"},
+                        {"actions": "full"},
+                        {"charges": "2"},
+                        {"range": 60},
+                        {"description": "As a full action you may use 2 spell charges to fill a square with a maximum size of 15ft x 15ft with a spell that raises the Defense Score of anyone inside it by 3. This bonus goes away immediately when they leave the square. You may place as many of these on the battlefield as you want but only 1 may be placed before combat. A portion of this square must be within 60 ft. of you when you place it. The duration of the protective spell is 10 minutes or until you declare that you want to end the spell."}
+                    ]},
+                    {"wall of light 1": [{"type": "defenseSpell"},
+                        {"actions": "normal"},
+                        {"charges": 1},
+                        {"range": 60},
+                        {"description": "As a normal action you may use 1 spell charge to create a transparent wall that only you can see. This wall fills a 15ft line. You can take cover behind this wall. If the enemy doesn’t know that you set up the wall (this usually requires a stealth check vs the enemy’s perception check to cast it secretly) the first attack aimed at you while taking cover behind it automatically fails. You may only have 2 of these walls out at any given time. The wall may only be cast after combat has started."}
+                    ]}
+                ]}
             ]},
             {"7": [
                 {"isAchieved": false},
-                {"toHit": [0, 0]},
-                {"skills": []}
+                {"toHit": [3, 3]},
+                {"skills": [
+                    {"critical spell": [{"type": "spellMod"},
+                        {"description": "When you get a critical hit with a spell instead of dealing double damage you can now cast another spell from a different spell School than your first spell."}
+                    ]},
+                    {"ranged healer 2": [{"type": "spellMod"},
+                        {"description": "The player may use 1 spell charges to increase the range of “Charge Heal” abilities up to 60 ft."}
+                    ]}
+                ]}
             ]},
             {"8": [
                 {"isAchieved": false},
-                {"toHit": [0, 0]},
-                {"skills": []}
+                {"toHit": [3, 3]},
+                {"skills": [
+                    {"selfless sacrifice": [{"type": "spellMod"},
+                        {"description": "When a teammate within 60ft is being attacked by a damage dealing spell the Abjurer may redirect the spell at him/herself by sacrificing their next move action."}
+                    ]},
+                    {"health egis 2": [{"type": "defenseSpell"},
+                        {"actions": "meditation"},
+                        {"charges": "x"},
+                        {"range": "sight"},
+                        {"description": "You may as a full action enter a mediation. Each turn you remain in this meditation costs 1 spell charge. While in this mediation you may focus on 1 player within sight of you. Every turn this player has a 50% chance to heal 1d6. While in this mediation you may not take any given action, move actions, normal actions or full actions otherwise your mediation is broken. If you are hit, your meditation is also broken. You are also considered helpless while meditating."}
+                    ]}
+                ]}
             ]},
             {"9": [
                 {"isAchieved": false},
-                {"toHit": [0, 0]},
-                {"skills": []}
+                {"toHit": [4, 3]},
+                {"skills": [
+                    {"elemental sanctuary": [{"type": "defenseSpell"},
+                        {"actions": "normal"},
+                        {"charges": 0},
+                        {"range": 40},
+                        {"description": "The player may summon a small and sacred 25ft square area that provides protection from the elements and no undead may enter it. However, anyone inside the sanctuary cannot attack anyone or anything outside the sanctuary. (The player may not use this in conjunction with Selfless Sacrifice.)"}
+                    ]}
+                ]}
             ]},
             {"10": [
                 {"isAchieved": false},
-                {"toHit": [0, 0]},
-                {"skills": []},
-                {"proficiencies": []},
-                {"schools": []},
-                {"trainings": []}
+                {"toHit": [5, 4]},
+                {"skills": [
+                    {"quick charge": [{"type": "spellMod"},
+                        {"description": "The player may generate 2 spell charges as a move action rather than 1. (This means that you can now generate 3 spell charges as a full action)."}
+                    ]}
+                ]},
+                {"multiChoices": [
+                    {"amount": 1},
+                    {"choices": [
+                        {"hydro": false},
+                        {"blood": false},
+                        {"necro": false},
+                        {"bomb": false},
+                        {"alchemy": false},
+                        {"soul": false},
+                        {"martial": false},
+                        {"agility": false}
+                    ]}
+                ]}
             ]},
             {"11": [
                 {"isAchieved": false},
-                {"toHit": [0, 0]},
-                {"skills": []}
+                {"toHit": [6, 4]},
+                {"skills": [
+                    {"holy infusion": [{"type": "spellMod"},
+                        {"description": "You may touch a companion or yourself as a full action, now the next spell they cast may count as dealing holy damage and hurt those weak to holiness. So, a spell that deals 1d6 fire damage would now deal 1d6 holy damage. A spell that fills an area with poison would now fill that area with a blessed cloud."}
+                    ]},
+                    {"health egis 3": [{"type": "defenseSpell"},
+                        {"actions": "meditation"},
+                        {"charges": "x"},
+                        {"range": "sight"},
+                        {"description": "You may as a full action enter a mediation. Each turn you remain in this meditation costs 1 spell charge. While in this mediation you may focus on 1 player within sight of you. Every turn this player has a 50% chance to heal 1d8. While in this mediation you may not take any given action, move actions, normal actions or full actions otherwise your mediation is broken. If you are hit, your meditation is also broken. You are also considered helpless while meditating."}
+                    ]}
+                ]}
             ]},
             {"12": [
                 {"isAchieved": false},
-                {"toHit": [0, 0]},
-                {"skills": []}
+                {"toHit": [6, 5]},
+                {"skills": [
+                    {"holy blast 2": [{"type": "atkSpell"},
+                        {"actions": "normal"},
+                        {"charges": 1},
+                        {"range": 80},
+                        {"diceCount": 2},
+                        {"dice": 8},
+                        {"description": "As a normal action the player may use 2 spell charges to let out a blast of energy that fills a straight line in front of him/her for 80ft. This deals 1d10 damage to everyone in the line and 1d12 if they are weak to holiness."}
+                    ]},
+                    {"wall of light 2": [{"type": "defenseSpell"},
+                        {"actions": "normal"},
+                        {"charges": 1},
+                        {"range": 60},
+                        {"description": "As a normal action you may use 1 spell charge to create a transparent wall that only you can see. This wall fills a 20ft line. You can take cover behind this wall. If the enemy doesn’t know that you set up the wall (this usually requires a stealth check vs the enemy’s perception check to cast it secretly) the first attack aimed at you while taking cover behind it automatically fails. You may only have 2 of these walls out at any given time. The wall may only be cast after combat has started."}
+                    ]}
+                ]}
             ]},
             {"13": [
                 {"isAchieved": false},
-                {"toHit": [0, 0]},
-                {"skills": []}
+                {"toHit": [7, 5]},
+                {"skills": [
+                    {"charge heal 3": [{"type": "healSpell"},
+                        {"actions": "normal"},
+                        {"charges": "x"},
+                        {"range": "touch"},
+                        {"healAmount": "3x"},
+                        {"description": "As a normal action you may touch an ally and use spell charges to heal them. You may use as many spell charges as you have, and each spell charge you use heals the ally by 3 HP. The spell charges are depleted after using them this way."}
+                    ]}
+                ]}
             ]},
             {"14": [
                 {"isAchieved": false},
-                {"toHit": [0, 0]},
-                {"skills": []}
+                {"toHit": [7, 5]},
+                {"skills": [
+                    {"ranged healer 3": [{"type": "spellMod"},
+                        {"description": "The player may increase the range of “Charge Heal” abilities up to 60 ft. This requires no spell charges."}
+                    ]}
+                ]}
             ]},
             {"15": [
                 {"isAchieved": false},
-                {"toHit": [0, 0]},
-                {"skills": []}
+                {"toHit": [8, 5]},
+                {"skills": [
+                    {"holy shell": [{"type": "defenseSpell"},
+                        {"actions": "normal"},
+                        {"charges": 0},
+                        {"range": "self"},
+                        {"description": "As a normal action the player may set up a holy shell of light around him/herself or around another player. This shell lasts until the player is the target of an attack. While the shell is up if an attack is aimed at the player, he/she may roll 1d20 + Wis mod + Cha mod. If the player's roll is higher than the “To Hit” roll aimed at him/her then the barrier successfully blocks the attack and is destroyed. If the player's roll is lower, then the barrier is overpowered/destroyed, and the player takes normal damage."}
+                    ]}
+                ]}
             ]},
             {"16": [
                 {"isAchieved": false},
-                {"toHit": [0, 0]},
-                {"skills": []}
+                {"toHit": [8, 6]}
             ]},
             {"17": [
                 {"isAchieved": false},
-                {"toHit": [0, 0]},
-                {"skills": []}
+                {"toHit": [8, 6]},
+                {"skills": [
+                    {"charge heal 4": [{"type": "healSpell"},
+                        {"actions": "normal"},
+                        {"charges": "x"},
+                        {"range": "touch"},
+                        {"healAmount": "5x"},
+                        {"description": "As a normal action you may touch an ally and use spell charges to heal them. You may use as many spell charges as you have, and each spell charge you use heals the ally by 5 HP. The spell charges are depleted after using them this way."}
+                    ]}
+                ]}
             ]},
             {"18": [
                 {"isAchieved": false},
-                {"toHit": [0, 0]},
-                {"skills": []}
+                {"toHit": [9, 7]},
+                {"skills": [
+                    {"wall of light 3": [{"type": "defenseSpell"},
+                        {"actions": "normal"},
+                        {"charges": 1},
+                        {"range": 60},
+                        {"description": "As a normal action you may use 1 spell charge to create a transparent wall that only you can see. This wall fills a 30ft line. You can take cover behind this wall. If the enemy doesn’t know that you set up the wall (this usually requires a stealth check vs the enemy’s perception check to cast it secretly) the first attack aimed at you while taking cover behind it automatically fails. You may only have 2 of these walls out at any given time. The wall may only be cast after combat has started."}
+                    ]}
+                ]}
             ]},
             {"19": [
                 {"isAchieved": false},
-                {"toHit": [0, 0]},
-                {"skills": []}
+                {"toHit": [9, 8]}
             ]},
             {"20": [
                 {"isAchieved": false},
-                {"toHit": [0, 0]},
-                {"skills": []}
+                {"toHit": [10, 8]}
             ]}
         ]}
     ]},
     {"alchemist": [
-        {"description:": ""},
-        {"hitDice": ""},
-        {"defMod": ""},
-        {"agilMod": ""},
-        {"martDef": ""},
-        {"speedMod": ""},
-        {"classTalents": []},
-        {"createDesc": ""},
+        {"hitDice": 4},
+        {"defMod": 1},
+        {"agilMod": 2},
+        {"martDef": 1},
+        {"speedMod": 3},
+        {"classTalents": ["craft", "disguise", "knowledge mundane", "knowledge mythical", "stealth", "surgical"]},
         {"levels": [
             {"1": [
                 {"isAchieved": false},

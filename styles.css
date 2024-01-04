@@ -24,6 +24,7 @@
     --grey-scale5: #b7c1d3ff;
 }
 
+/* Formatting for the header across the website */
 header {
     background-color: var(--grey-scale1);
     border-bottom-style: ridge;
@@ -106,6 +107,12 @@ header {
     height: 25px;
 }
 
+.nav-item a:hover {
+    background-color: var(--base-green);
+    color: var(--white);
+}
+
+/* General formatting for the body element across the website */
 body {
     background-color: var(--grey-scale1);
     text-align: center;
@@ -114,21 +121,29 @@ body {
     color: var(--white);
 }
 
+/* Formatting for most every button used across the website */
 button {
     width: 125px;
     height: 35px;
     background-color: var(--light-green1);
     border-style: none;
     border-radius: 20px;
-}
-
-button a {
     font-size: 18px;
     font-family: var(--century);
     color: var(--black);
     text-decoration: none;
 }
 
+button:hover {
+    width: 125px;
+    height: 35px;
+    background-color: var(--base-green);
+    color: var(--white);
+    border-style: none;
+    border-radius: 20px;
+}
+
+/* Formatting for the arcanum section containing the different rule books available */
 .section1 {
     background-image: url(img/beasty.jpg);
     background-position: center;
@@ -175,6 +190,7 @@ button a {
     font-size: 20px;
 }
 
+/* Formatting for the about section on the home page */
 .about {
     background: rgba(11, 19, 33, 0.7);
     border-radius: 20px;
@@ -192,6 +208,7 @@ button a {
     font-family: var(--copper);
 }
 
+/* Formatting for the character creation section of the home page */
 .section2 {
     display:flex;
     justify-content: flex-end;
@@ -215,6 +232,7 @@ button a {
     width:150px;
 }
 
+/* Formatting for the join discord section on the home page */
 .section3 {
     display:flex;
     justify-content: flex-start;
@@ -244,6 +262,7 @@ button a {
     margin-left: 70%;
 }
 
+/* Formatting for the news section of the home page */
 .section4 {
     display:flex;
     justify-content: flex-end;
@@ -282,6 +301,109 @@ button a {
     margin-left: 70%;
 }
 
+/*Format for the characters.html page*/
+/* Formatting for the top page header of the characters page */
+.chaPageHeader {
+    display:flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-left: 10%;
+    margin-top: 75px;
+    width: 80%;
+    background-color: rgba(46, 55, 63, 0.5);
+    border-radius: 20px;
+    border-style: ridge;
+    border-color: var(--grey-scale3);
+}
+
+.chaPageHeader h1 {
+    margin: 0;
+    margin-left: 1%;
+    padding: 5px;
+    font-family: var(--century);
+}
+
+.chaPageHeader button {
+    width: 175px;
+    margin-right: 1%;
+}
+
+/* formatting for the character bubbles */
+.characters {
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    text-align: left;
+    width: 80%;
+    margin-left: 10%;
+    margin-top: 40px;
+    margin-bottom: 100px;
+    background-color: rgba(132, 142, 150, 0.5);
+}
+
+.characterBubble {
+    width: 375px;
+    height: 150px;
+    padding: 15px;
+    margin: 15px;
+    background-color: var(--grey-scale1);
+}
+
+.characterHead {
+    display: flex;
+    justify-content: flex-start;
+    margin: none;
+    border-bottom-style: ridge;
+    border-bottom-color: var(--grey-scale3);
+}
+
+.characters img {
+    width: 75px;
+    height: 75px;
+}
+
+.characterDescription {
+    margin-left: 15px;
+}
+
+.characterHead h2 {
+    margin-top: 0px;
+    margin-left: 0px;
+    font-family: var(--copper);
+    font-size: 25px;
+}
+
+.characterInfo {
+    display: flex;
+    text-decoration: none;
+    list-style: none;
+    justify-content: flex-start;
+    padding: 0;
+}
+
+.characterInfo li {
+    margin-left: 5px;;
+    font-family: var(--century);
+}
+
+.characterNav {
+    display: flex;
+    text-decoration: none;
+    list-style: none;
+    justify-content: space-between;
+    padding: 0;
+}
+
+.characterNav li {
+    font-size: 20px;
+    font-family: var(--century);
+}
+
+.characterNav button {
+    width: 75px;
+}
+
+/* Formatting for the footer */
 footer {
     background-color: var(--grey-scale1);
     border-top-style: ridge;
