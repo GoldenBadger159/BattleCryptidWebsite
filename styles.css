@@ -310,6 +310,7 @@ button:hover {
     margin-left: 10%;
     margin-top: 75px;
     width: 80%;
+    height: 55px;
     background-color: rgba(46, 55, 63, 0.5);
     border-radius: 20px;
     border-style: ridge;
@@ -331,7 +332,7 @@ button:hover {
 /* formatting for the character bubbles */
 .characters {
     display: flex;
-    justify-content: space-between;
+    justify-content: space-evenly;
     flex-wrap: wrap;
     text-align: left;
     width: 80%;
@@ -342,7 +343,7 @@ button:hover {
 }
 
 .characterBubble {
-    width: 375px;
+    width: 28%;
     height: 150px;
     padding: 15px;
     margin: 15px;
@@ -401,6 +402,58 @@ button:hover {
 
 .characterNav button {
     width: 75px;
+}
+
+/* Formatting for the character customization pages */
+.custChar {
+    background-image: url(img/9.png);
+    background-position: center;
+    background-size:cover;
+    height: 2000px;
+    padding-top: 30px;
+}
+
+.custForms {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    width: 80%;
+    margin-left: 10%;
+    margin-top: 30px;
+    height: 80%;
+    background-color: rgba(23, 32, 39, 0.85);
+    border-radius: 20px;
+    border-style: ridge;
+    border-color: var(--grey-scale3);
+}
+
+.formsNav {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: var(--light-green1);
+    height: 50px;
+    border-radius: 20px;
+    border-style: ridge;
+    border-color: var(--grey-scale3);
+}
+
+.formsNav li {
+    margin-right: 2.5rem;
+    margin-left: -.5rem;
+    list-style-type: none;
+}
+
+.formsNav a {
+    background-color: var(--grey-scale1);
+    color: var(--white);
+    text-decoration: none;
+    display: block;
+    border-radius: 20px;
+    border-style: ridge;
+    border-color: var(--grey-scale3);
+    width: 150px;
+    height: 25px;
 }
 
 /* Formatting for the footer */

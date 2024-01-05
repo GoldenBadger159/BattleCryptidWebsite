@@ -129,6 +129,9 @@
                         {"description": "As a full action you may use 2 spell charges to fill a square with a maximum size of 15ft x 15ft with a spell that raises the Defense Score of anyone inside it by 2. This bonus goes away immediately when they leave the square. You may place as many of these on the battlefield as you want but only 1 may be placed before combat. A portion of this square must be within 60 ft. of you when you place it. The duration of the protective spell is 10 minutes or until you declare that you want to end the spell."}
                     ]},
                     {"light": [{"type": "alteration"},
+                        {"actions": "full"},
+                        {"charges": 0},
+                        {"range": "touch"},
                         {"description": "As a full action and at touch you may make a small object glow. It lights a 30ft area around the thing that you just touched. You may only have 1 instance of this spell at any given time."}
                     ]},
                     {"health egis 1": [{"type": "defenseSpell"},
@@ -378,162 +381,272 @@
             {"1": [
                 {"isAchieved": false},
                 {"toHit": [0, 0]},
-                {"skills": []},
-                {"proficiencies": []},
-                {"schools": []},
-                {"trainings": []}
+                {"skills": [
+                    {"glue": [{"type": "condition"},
+                        {"actions": "normal"},
+                        {"charges": 0},
+                        {"range": 30},
+                        {"description": "As a normal action and at a range of up to 30 ft. an alchemist may make a ranged attack. If successful, the target of this attack and the alchemist are now connected. This attack has a “To Hit” of 1d20 + Int Mod."}
+                    ]},
+                    {"preserve brew 1": [{"type": "passive"},
+                        {"description": "When the player attempts to make a potion or poison and fails their craft check there is a 25% chance that they do not destroy the ingredients."}
+                    ]},
+                    {"collector": [{"type": "passive"},
+                        {"description": "When collecting alchemy ingredients there is a 25% chance the player will gather 2 of the ingredients instead of 1."}
+                    ]}
+                ]},
+                {"proficiencies": [
+                    {"amount": 1},
+                    {"choices": [{"whip and chain": false}, {"one handed crossbow": false}]}
+                ]},
+                {"trainings": [{"alchemy": true}, {"bomb": true}]}
             ]},
             {"2": [
                 {"isAchieved": false},
-                {"toHit": [0, 0]},
-                {"skills": []},
-                {"proficiencies": []},
-                {"schools": []},
-                {"trainings": []}
+                {"toHit": [1, 0]},
+                {"skills": [
+                    {"gas transmute": [{"type": "alteration"},
+                        {"actions": "normal"},
+                        {"charges": 1},
+                        {"range": "touch"},
+                        {"description": "As a normal action and at touch the player may use 1 spell charge to turn fog, blood mist, or smoke into a poison cloud or miasma. The reverse works as well. "}
+                    ]},
+                    {"concoctions 1": [{"type": "table"},
+                        {"items": [
+                            {"prescribed experience": "The player gains proficiency with a weapon of his or her choice for the duration of the concoction’s effects."},
+                            {"rubber skin": "Every time you are hit with a sword or ax there is a 50% chance you take no damage, but every time you are hit by a blunt stave, pole arm, throwing weapon, spell, or hammer there is a 50% chance you take double damage."},
+                            {"bottled muscle memory": "You gain an extra normal action every turn, but your Defense Score is lowered by 8."},
+                            {"chameleon draught": "You gain the ability to hide in plain sight without needing to be behind something or in the shadows, but you also move 1 square slower than normal."}
+                        ]},
+                        {"description": "The player gains the ability to make 1 concoction every short rest (4 or more hours). Concoctions go bad after 1 day and require at least 1 monster part to make. Although they may use any monster part. The effects of concoctions may not stack with other concoctions but may stack with a mutation serum. The effects of a concoction last until the player is able to take a long rest. Long rests are the only way to remove the effects of the concoction. Concoctions are designed for your physiology and therefore may not be used by other party members. You may attempt to take 2 concoctions at the same time however you take 1d20 damage every hour and there is only a 50% chance to gain the benefits of the second concoction. The 1d20 damage gained this way may not be healed with potions or magic, the only way to heal this damage is through resting. Each time a player makes a concoction he/she may choose from the following list:"}
+                    ]},
+                    {"charge potion 1": [{"type": "craft"},
+                        {"actions": "move"},
+                        {"itemName": "charge potion(2)"},
+                        {"description": "After generating 2 spell charges you may transfer them into a glass flask as a move action.  You may then give this flask to another party member as another move action (for you), and they may drink it as a move action to gain 2 charges. This potion can only be generated in combat however it does not expire until the end of the in-game week. This potion may also be placed in a syringe once the player unlocks that skill."}
+                    ]}
+                ]}
             ]},
             {"3": [
                 {"isAchieved": false},
-                {"toHit": [0, 0]},
-                {"skills": []},
-                {"proficiencies": []},
-                {"schools": []},
-                {"trainings": []}
+                {"toHit": [1, 0]},
+                {"skills": [
+                    {"liquid transmute": [{"type": "alteration"},
+                        {"actions": "normal"},
+                        {"charges": 1},
+                        {"range": "touch"},
+                        {"description": "At a touch and as a normal action the player may use 1 spell charge to turn a 15ft x 15ft square of water, blood or oil into poison or lava or vice versa."}
+                    ]},
+                    {"solid transmute": [{"type": "alteration"},
+                        {"actions": "normal"},
+                        {"charges": 1},
+                        {"range": "touch"},
+                        {"description": "As a normal action and at touch the player may use a spell charge to turn 12 inches of wood, dirt or ice into a steel melee weapon of any type that deals 1d6 + int damage."}
+                    ]},
+                    {"oxidation": [{"type": "alteration"},
+                        {"actions": "normal"},
+                        {"charges": 0},
+                        {"range": "touch"},
+                        {"description": ": Player may as a normal action and at touch destroy a steel weapon by turning it into rust. This is a 1d20 + Int mod attack that is aimed at the Defense Score. This provokes an attack of opportunity that triggers after determining if the weapon is destroyed."}
+                    ]}
+                ]}
             ]},
             {"4": [
                 {"isAchieved": false},
-                {"toHit": [0, 0]},
-                {"skills": []},
-                {"proficiencies": []},
-                {"schools": []},
-                {"trainings": []}
+                {"toHit": [2, 1]},
+                {"skills": [
+                    {"": [{"type": ""},
+                        {"description": ""}
+                    ]},
+                    {"": [{"type": ""},
+                        {"description": ""}
+                    ]}
+                ]}
             ]},
             {"5": [
                 {"isAchieved": false},
-                {"toHit": [0, 0]},
-                {"skills": []},
-                {"proficiencies": []},
-                {"schools": []},
-                {"trainings": []}
+                {"toHit": [2, 2]},
+                {"skills": [
+                    {"": [{"type": ""},
+                        {"description": ""}
+                    ]},
+                    {"": [{"type": ""},
+                        {"description": ""}
+                    ]},
+                    {"": [{"type": ""},
+                        {"description": ""}
+                    ]},
+                    {"": [{"type": ""},
+                        {"description": ""}
+                    ]}
+                ]}
             ]},
             {"6": [
                 {"isAchieved": false},
-                {"toHit": [0, 0]},
-                {"skills": []},
-                {"proficiencies": []},
-                {"schools": []},
-                {"trainings": []}
+                {"toHit": [3, 2]},
+                {"skills": [
+                    {"": [{"type": ""},
+                        {"description": ""}
+                    ]},
+                    {"": [{"type": ""},
+                        {"description": ""}
+                    ]}
+                ]}
             ]},
             {"7": [
                 {"isAchieved": false},
-                {"toHit": [0, 0]},
-                {"skills": []},
-                {"proficiencies": []},
-                {"schools": []},
-                {"trainings": []}
+                {"toHit": [4, 2]},
+                {"skills": [
+                    {"": [{"type": ""},
+                        {"description": ""}
+                    ]},
+                    {"": [{"type": ""},
+                        {"description": ""}
+                    ]}
+                ]}
             ]},
             {"8": [
                 {"isAchieved": false},
-                {"toHit": [0, 0]},
-                {"skills": []},
-                {"proficiencies": []},
-                {"schools": []},
-                {"trainings": []}
+                {"toHit": [4, 2]},
+                {"skills": [
+                    {"": [{"type": ""},
+                        {"description": ""}
+                    ]},
+                    {"": [{"type": ""},
+                        {"description": ""}
+                    ]},
+                    {"": [{"type": ""},
+                        {"description": ""}
+                    ]}
+                ]}
             ]},
             {"9": [
                 {"isAchieved": false},
-                {"toHit": [0, 0]},
-                {"skills": []},
-                {"proficiencies": []},
-                {"schools": []},
-                {"trainings": []}
+                {"toHit": [5, 2]},
+                {"skills": [
+                    {"": [{"type": ""},
+                        {"description": ""}
+                    ]},
+                    {"": [{"type": ""},
+                        {"description": ""}
+                    ]}
+                ]}
             ]},
             {"10": [
                 {"isAchieved": false},
-                {"toHit": [0, 0]},
-                {"skills": []},
-                {"proficiencies": []},
-                {"schools": []},
-                {"trainings": []}
+                {"toHit": [5, 3]},
+                {"skills": [
+                    {"": [{"type": ""},
+                        {"description": ""}
+                    ]},
+                    {"": [{"type": ""},
+                        {"description": ""}
+                    ]},
+                    {"": [{"type": ""},
+                        {"description": ""}
+                    ]}
+                ]}
             ]},
             {"11": [
                 {"isAchieved": false},
-                {"toHit": [0, 0]},
-                {"skills": []},
-                {"proficiencies": []},
-                {"schools": []},
-                {"trainings": []}
+                {"toHit": [5, 3]},
+                {"skills": [
+                    {"": [{"type": ""},
+                        {"description": ""}
+                    ]},
+                    {"": [{"type": ""},
+                        {"description": ""}
+                    ]}
+                ]}
             ]},
             {"12": [
                 {"isAchieved": false},
-                {"toHit": [0, 0]},
-                {"skills": []},
-                {"proficiencies": []},
-                {"schools": []},
-                {"trainings": []}
+                {"toHit": [5, 4]},
+                {"skills": [
+                    {"": [{"type": ""},
+                        {"description": ""}
+                    ]},
+                    {"": [{"type": ""},
+                        {"description": ""}
+                    ]}
+                ]}
             ]},
             {"13": [
                 {"isAchieved": false},
-                {"toHit": [0, 0]},
-                {"skills": []},
-                {"proficiencies": []},
-                {"schools": []},
-                {"trainings": []}
+                {"toHit": [6, 4]},
+                {"skills": [
+                    {"": [{"type": ""},
+                        {"description": ""}
+                    ]},
+                    {"": [{"type": ""},
+                        {"description": ""}
+                    ]}
+                ]}
             ]},
             {"14": [
                 {"isAchieved": false},
-                {"toHit": [0, 0]},
-                {"skills": []},
-                {"proficiencies": []},
-                {"schools": []},
-                {"trainings": []}
+                {"toHit": [6, 4]},
+                {"skills": [
+                    {"": [{"type": ""},
+                        {"description": ""}
+                    ]},
+                    {"": [{"type": ""},
+                        {"description": ""}
+                    ]}
+                ]}
             ]},
             {"15": [
                 {"isAchieved": false},
-                {"toHit": [0, 0]},
-                {"skills": []},
-                {"proficiencies": []},
-                {"schools": []},
-                {"trainings": []}
+                {"toHit": [6, 5]},
+                {"skills": [
+                    {"": [{"type": ""},
+                        {"description": ""}
+                    ]}
+                ]}
             ]},
             {"16": [
                 {"isAchieved": false},
-                {"toHit": [0, 0]},
-                {"skills": []},
-                {"proficiencies": []},
-                {"schools": []},
-                {"trainings": []}
+                {"toHit": [7, 5]},
+                {"skills": [
+                    {"": [{"type": ""},
+                        {"description": ""}
+                    ]},
+                    {"": [{"type": ""},
+                        {"description": ""}
+                    ]}
+                ]}
             ]},
             {"17": [
                 {"isAchieved": false},
-                {"toHit": [0, 0]},
-                {"skills": []},
-                {"proficiencies": []},
-                {"schools": []},
-                {"trainings": []}
+                {"toHit": [7, 5]},
+                {"skills": [
+                    {"": [{"type": ""},
+                        {"description": ""}
+                    ]}
+                ]}
             ]},
             {"18": [
                 {"isAchieved": false},
-                {"toHit": [0, 0]},
-                {"skills": []},
-                {"proficiencies": []},
-                {"schools": []},
-                {"trainings": []}
+                {"toHit": [7, 6]},
+                {"skills": [
+                    {"": [{"type": ""},
+                        {"description": ""}
+                    ]}
+                ]}
             ]},
             {"19": [
                 {"isAchieved": false},
-                {"toHit": [0, 0]},
-                {"skills": []},
-                {"proficiencies": []},
-                {"schools": []},
-                {"trainings": []}
+                {"toHit": [8, 7]},
+                {"skills": []}
             ]},
             {"20": [
                 {"isAchieved": false},
-                {"toHit": [0, 0]},
-                {"skills": []},
-                {"proficiencies": []},
-                {"schools": []},
-                {"trainings": []}
+                {"toHit": [8, 8]},
+                {"skills": [
+                    {"": [{"type": ""},
+                        {"description": ""}
+                    ]}
+                ]}
             ]}
         ]}
     ]},
